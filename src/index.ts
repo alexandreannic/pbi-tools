@@ -1,19 +1,27 @@
 import {generatePivotAndFormat} from './generatePivotAndFormat'
+import {generatePivotAndFormatQuery} from './GeneratePivotAndFormatQuery'
+import {hhColumns} from './columns'
 
-console.error(generatePivotAndFormat({
-  columns: [
-    `18.1.2. What are the factors that make this location feel unsafe?/Armed conflict`,
-    `18.1.2. What are the factors that make this location feel unsafe?/Presence of armed actors and/or military`,
-    `18.1.2. What are the factors that make this location feel unsafe?/Shelling or threat of shelling`,
-    `18.1.2. What are the factors that make this location feel unsafe?/Eviction or threat of eviction`,
-    `18.1.2. What are the factors that make this location feel unsafe?/Crime`,
-    `18.1.2. What are the factors that make this location feel unsafe?/Tensions with the host community`,
-    `18.1.2. What are the factors that make this location feel unsafe?/Threat of GBV, including sexual harrassment and/or exploitation`,
-    `18.1.2. What are the factors that make this location feel unsafe?/Presence of hazards, including UXOs`,
-    `18.1.2. What are the factors that make this location feel unsafe?/Unsafe or poor living conditions`,
-    `18.1.2. What are the factors that make this location feel unsafe?/Don't know`,
-    `18.1.2. What are the factors that make this location feel unsafe?/Don't want to say`,
-    `18.1.2. What are the factors that make this location feel unsafe?/Other (specify)`,
-  ],
-  question: '18.1.2. What are the factors that make this location feel unsafe?'
-}))
+// console.error(generatePivotAndFormat({
+//   columns: [
+//     `39. What type of information would you like to receive to access services?/Health`,
+//     `39. What type of information would you like to receive to access services?/Legal aid`,
+//     `39. What type of information would you like to receive to access services?/Food`,
+//     `39. What type of information would you like to receive to access services?/Livelihoods`,
+//     `39. What type of information would you like to receive to access services?/Shelter`,
+//     `39. What type of information would you like to receive to access services?/Return`,
+//     `39. What type of information would you like to receive to access services?/Protection`,
+//     `39. What type of information would you like to receive to access services?/Cash`,
+//     `39. What type of information would you like to receive to access services?/Family reunification`,
+//     `39. What type of information would you like to receive to access services?/Compensation regarding the mechanism for destroyed houses/apartments`,
+//     `39. What type of information would you like to receive to access services?/Other`,
+//   ],
+//   question: '39. What type of information would you like to receive to access services?',
+//   newColumnTitleForQuestion: 'Information about services wanted',
+// }))
+
+generatePivotAndFormatQuery({
+  allColumns:hhColumns,
+  checkboxQuestionLabel:`39. What type of information would you like to receive to access services?`,
+  preserveBlank: true
+})

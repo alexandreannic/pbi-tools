@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "ts-node src/index.ts 2> output/output.txt"
+    "start": "ts-node src/index.ts 2> output/output.txt",
+    "test": "ts-node src/index.ts"
   },
   "devDependencies": {
     "ts-node": "^10.9.1",
